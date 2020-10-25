@@ -57,7 +57,7 @@ def table_data_to_csv(headers, table_data, file_name: str):
 
     # Write the csv first row (header)
     writer.writerow(headers)
-    print("Start extract data...")
+    print("Start extracting data...")
     for r in tqdm(table_data):
         # column_desc = r.find_elements_by_css_selector("td:nth-child(1) > span")
         try:
