@@ -1,0 +1,152 @@
+#,Name,Type,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed
+001 | https://img.pokemondb.net/sprites/sword-shield/icon/bulbasaur.png,Bulbasaur,"['GRASS', 'POISON']",318,45,49,49,65,65,45
+002 | https://img.pokemondb.net/sprites/sword-shield/icon/ivysaur.png,Ivysaur,"['GRASS', 'POISON']",405,60,62,63,80,80,60
+003 | https://img.pokemondb.net/sprites/sword-shield/icon/venusaur.png,Venusaur,"['GRASS', 'POISON']",525,80,82,83,100,100,80
+004 | https://img.pokemondb.net/sprites/sword-shield/icon/charmander.png,Charmander,['FIRE'],309,39,52,43,60,50,65
+005 | https://img.pokemondb.net/sprites/sword-shield/icon/charmeleon.png,Charmeleon,['FIRE'],405,58,64,58,80,65,80
+006 | https://img.pokemondb.net/sprites/sword-shield/icon/charizard.png,Charizard,"['FIRE', 'FLYING']",534,78,84,78,109,85,100
+007 | https://img.pokemondb.net/sprites/sword-shield/icon/squirtle.png,Squirtle,['WATER'],314,44,48,65,50,64,43
+008 | https://img.pokemondb.net/sprites/sword-shield/icon/wartortle.png,Wartortle,['WATER'],405,59,63,80,65,80,58
+009 | https://img.pokemondb.net/sprites/sword-shield/icon/blastoise.png,Blastoise,['WATER'],530,79,83,100,85,105,78
+010 | https://img.pokemondb.net/sprites/sword-shield/icon/caterpie.png,Caterpie,['BUG'],195,45,30,35,20,20,45
+011 | https://img.pokemondb.net/sprites/sword-shield/icon/metapod.png,Metapod,['BUG'],205,50,20,55,25,25,30
+012 | https://img.pokemondb.net/sprites/sword-shield/icon/butterfree.png,Butterfree,"['BUG', 'FLYING']",395,60,45,50,90,80,70
+013 | https://img.pokemondb.net/sprites/sword-shield/icon/weedle.png,Weedle,"['BUG', 'POISON']",195,40,35,30,20,20,50
+014 | https://img.pokemondb.net/sprites/sword-shield/icon/kakuna.png,Kakuna,"['BUG', 'POISON']",205,45,25,50,25,25,35
+015 | https://img.pokemondb.net/sprites/sword-shield/icon/beedrill.png,Beedrill,"['BUG', 'POISON']",395,65,90,40,45,80,75
+016 | https://img.pokemondb.net/sprites/sword-shield/icon/pidgey.png,Pidgey,"['NORMAL', 'FLYING']",251,40,45,40,35,35,56
+017 | https://img.pokemondb.net/sprites/sword-shield/icon/pidgeotto.png,Pidgeotto,"['NORMAL', 'FLYING']",349,63,60,55,50,50,71
+018 | https://img.pokemondb.net/sprites/sword-shield/icon/pidgeot.png,Pidgeot,"['NORMAL', 'FLYING']",479,83,80,75,70,70,101
+019 | https://img.pokemondb.net/sprites/sword-shield/icon/rattata.png,Rattata,['NORMAL'],253,30,56,35,25,35,72
+020 | https://img.pokemondb.net/sprites/sword-shield/icon/raticate.png,Raticate,['NORMAL'],413,55,81,60,50,70,97
+021 | https://img.pokemondb.net/sprites/sword-shield/icon/spearow.png,Spearow,"['NORMAL', 'FLYING']",262,40,60,30,31,31,70
+022 | https://img.pokemondb.net/sprites/sword-shield/icon/fearow.png,Fearow,"['NORMAL', 'FLYING']",442,65,90,65,61,61,100
+023 | https://img.pokemondb.net/sprites/sword-shield/icon/ekans.png,Ekans,['POISON'],288,35,60,44,40,54,55
+024 | https://img.pokemondb.net/sprites/sword-shield/icon/arbok.png,Arbok,['POISON'],448,60,95,69,65,79,80
+025 | https://img.pokemondb.net/sprites/sword-shield/icon/pikachu.png,Pikachu,['ELECTRIC'],320,35,55,40,50,50,90
+026 | https://img.pokemondb.net/sprites/sword-shield/icon/raichu.png,Raichu,['ELECTRIC'],485,60,90,55,90,80,110
+027 | https://img.pokemondb.net/sprites/sword-shield/icon/sandshrew.png,Sandshrew,['GROUND'],300,50,75,85,20,30,40
+028 | https://img.pokemondb.net/sprites/sword-shield/icon/sandslash.png,Sandslash,['GROUND'],450,75,100,110,45,55,65
+029 | https://img.pokemondb.net/sprites/sword-shield/icon/nidoran-f.png,Nidoran♀,['POISON'],275,55,47,52,40,40,41
+030 | https://img.pokemondb.net/sprites/sword-shield/icon/nidorina.png,Nidorina,['POISON'],365,70,62,67,55,55,56
+031 | https://img.pokemondb.net/sprites/sword-shield/icon/nidoqueen.png,Nidoqueen,"['POISON', 'GROUND']",505,90,92,87,75,85,76
+032 | https://img.pokemondb.net/sprites/sword-shield/icon/nidoran-m.png,Nidoran♂,['POISON'],273,46,57,40,40,40,50
+033 | https://img.pokemondb.net/sprites/sword-shield/icon/nidorino.png,Nidorino,['POISON'],365,61,72,57,55,55,65
+034 | https://img.pokemondb.net/sprites/sword-shield/icon/nidoking.png,Nidoking,"['POISON', 'GROUND']",505,81,102,77,85,75,85
+035 | https://img.pokemondb.net/sprites/sword-shield/icon/clefairy.png,Clefairy,['FAIRY'],323,70,45,48,60,65,35
+036 | https://img.pokemondb.net/sprites/sword-shield/icon/clefable.png,Clefable,['FAIRY'],483,95,70,73,95,90,60
+037 | https://img.pokemondb.net/sprites/sword-shield/icon/vulpix.png,Vulpix,['FIRE'],299,38,41,40,50,65,65
+038 | https://img.pokemondb.net/sprites/sword-shield/icon/ninetales.png,Ninetales,['FIRE'],505,73,76,75,81,100,100
+039 | https://img.pokemondb.net/sprites/sword-shield/icon/jigglypuff.png,Jigglypuff,"['NORMAL', 'FAIRY']",270,115,45,20,45,25,20
+040 | https://img.pokemondb.net/sprites/sword-shield/icon/wigglytuff.png,Wigglytuff,"['NORMAL', 'FAIRY']",435,140,70,45,85,50,45
+041 | https://img.pokemondb.net/sprites/sword-shield/icon/zubat.png,Zubat,"['POISON', 'FLYING']",245,40,45,35,30,40,55
+042 | https://img.pokemondb.net/sprites/sword-shield/icon/golbat.png,Golbat,"['POISON', 'FLYING']",455,75,80,70,65,75,90
+043 | https://img.pokemondb.net/sprites/sword-shield/icon/oddish.png,Oddish,"['GRASS', 'POISON']",320,45,50,55,75,65,30
+044 | https://img.pokemondb.net/sprites/sword-shield/icon/gloom.png,Gloom,"['GRASS', 'POISON']",395,60,65,70,85,75,40
+045 | https://img.pokemondb.net/sprites/sword-shield/icon/vileplume.png,Vileplume,"['GRASS', 'POISON']",490,75,80,85,110,90,50
+046 | https://img.pokemondb.net/sprites/sword-shield/icon/paras.png,Paras,"['BUG', 'GRASS']",285,35,70,55,45,55,25
+047 | https://img.pokemondb.net/sprites/sword-shield/icon/parasect.png,Parasect,"['BUG', 'GRASS']",405,60,95,80,60,80,30
+048 | https://img.pokemondb.net/sprites/sword-shield/icon/venonat.png,Venonat,"['BUG', 'POISON']",305,60,55,50,40,55,45
+049 | https://img.pokemondb.net/sprites/sword-shield/icon/venomoth.png,Venomoth,"['BUG', 'POISON']",450,70,65,60,90,75,90
+050 | https://img.pokemondb.net/sprites/sword-shield/icon/diglett.png,Diglett,['GROUND'],265,10,55,25,35,45,95
+051 | https://img.pokemondb.net/sprites/sword-shield/icon/dugtrio.png,Dugtrio,['GROUND'],425,35,100,50,50,70,120
+052 | https://img.pokemondb.net/sprites/sword-shield/icon/meowth.png,Meowth,['NORMAL'],290,40,45,35,40,40,90
+053 | https://img.pokemondb.net/sprites/sword-shield/icon/persian.png,Persian,['NORMAL'],440,65,70,60,65,65,115
+054 | https://img.pokemondb.net/sprites/sword-shield/icon/psyduck.png,Psyduck,['WATER'],320,50,52,48,65,50,55
+055 | https://img.pokemondb.net/sprites/sword-shield/icon/golduck.png,Golduck,['WATER'],500,80,82,78,95,80,85
+056 | https://img.pokemondb.net/sprites/sword-shield/icon/mankey.png,Mankey,['FIGHTING'],305,40,80,35,35,45,70
+057 | https://img.pokemondb.net/sprites/sword-shield/icon/primeape.png,Primeape,['FIGHTING'],455,65,105,60,60,70,95
+058 | https://img.pokemondb.net/sprites/sword-shield/icon/growlithe.png,Growlithe,['FIRE'],350,55,70,45,70,50,60
+059 | https://img.pokemondb.net/sprites/sword-shield/icon/arcanine.png,Arcanine,['FIRE'],555,90,110,80,100,80,95
+060 | https://img.pokemondb.net/sprites/sword-shield/icon/poliwag.png,Poliwag,['WATER'],300,40,50,40,40,40,90
+061 | https://img.pokemondb.net/sprites/sword-shield/icon/poliwhirl.png,Poliwhirl,['WATER'],385,65,65,65,50,50,90
+062 | https://img.pokemondb.net/sprites/sword-shield/icon/poliwrath.png,Poliwrath,"['WATER', 'FIGHTING']",510,90,95,95,70,90,70
+063 | https://img.pokemondb.net/sprites/sword-shield/icon/abra.png,Abra,['PSYCHIC'],310,25,20,15,105,55,90
+064 | https://img.pokemondb.net/sprites/sword-shield/icon/kadabra.png,Kadabra,['PSYCHIC'],400,40,35,30,120,70,105
+065 | https://img.pokemondb.net/sprites/sword-shield/icon/alakazam.png,Alakazam,['PSYCHIC'],500,55,50,45,135,95,120
+066 | https://img.pokemondb.net/sprites/sword-shield/icon/machop.png,Machop,['FIGHTING'],305,70,80,50,35,35,35
+067 | https://img.pokemondb.net/sprites/sword-shield/icon/machoke.png,Machoke,['FIGHTING'],405,80,100,70,50,60,45
+068 | https://img.pokemondb.net/sprites/sword-shield/icon/machamp.png,Machamp,['FIGHTING'],505,90,130,80,65,85,55
+069 | https://img.pokemondb.net/sprites/sword-shield/icon/bellsprout.png,Bellsprout,"['GRASS', 'POISON']",300,50,75,35,70,30,40
+070 | https://img.pokemondb.net/sprites/sword-shield/icon/weepinbell.png,Weepinbell,"['GRASS', 'POISON']",390,65,90,50,85,45,55
+071 | https://img.pokemondb.net/sprites/sword-shield/icon/victreebel.png,Victreebel,"['GRASS', 'POISON']",490,80,105,65,100,70,70
+072 | https://img.pokemondb.net/sprites/sword-shield/icon/tentacool.png,Tentacool,"['WATER', 'POISON']",335,40,40,35,50,100,70
+073 | https://img.pokemondb.net/sprites/sword-shield/icon/tentacruel.png,Tentacruel,"['WATER', 'POISON']",515,80,70,65,80,120,100
+074 | https://img.pokemondb.net/sprites/sword-shield/icon/geodude.png,Geodude,"['ROCK', 'GROUND']",300,40,80,100,30,30,20
+075 | https://img.pokemondb.net/sprites/sword-shield/icon/graveler.png,Graveler,"['ROCK', 'GROUND']",390,55,95,115,45,45,35
+076 | https://img.pokemondb.net/sprites/sword-shield/icon/golem.png,Golem,"['ROCK', 'GROUND']",495,80,120,130,55,65,45
+077 | https://img.pokemondb.net/sprites/sword-shield/icon/ponyta.png,Ponyta,['FIRE'],410,50,85,55,65,65,90
+078 | https://img.pokemondb.net/sprites/sword-shield/icon/rapidash.png,Rapidash,['FIRE'],500,65,100,70,80,80,105
+079 | https://img.pokemondb.net/sprites/sword-shield/icon/slowpoke.png,Slowpoke,"['WATER', 'PSYCHIC']",315,90,65,65,40,40,15
+080 | https://img.pokemondb.net/sprites/sword-shield/icon/slowbro.png,Slowbro,"['WATER', 'PSYCHIC']",490,95,75,110,100,80,30
+081 | https://img.pokemondb.net/sprites/sword-shield/icon/magnemite.png,Magnemite,"['ELECTRIC', 'STEEL']",325,25,35,70,95,55,45
+082 | https://img.pokemondb.net/sprites/sword-shield/icon/magneton.png,Magneton,"['ELECTRIC', 'STEEL']",465,50,60,95,120,70,70
+083 | https://img.pokemondb.net/sprites/sword-shield/icon/farfetchd.png,Farfetch'd,"['NORMAL', 'FLYING']",377,52,90,55,58,62,60
+084 | https://img.pokemondb.net/sprites/sword-shield/icon/doduo.png,Doduo,"['NORMAL', 'FLYING']",310,35,85,45,35,35,75
+085 | https://img.pokemondb.net/sprites/sword-shield/icon/dodrio.png,Dodrio,"['NORMAL', 'FLYING']",470,60,110,70,60,60,110
+086 | https://img.pokemondb.net/sprites/sword-shield/icon/seel.png,Seel,['WATER'],325,65,45,55,45,70,45
+087 | https://img.pokemondb.net/sprites/sword-shield/icon/dewgong.png,Dewgong,"['WATER', 'ICE']",475,90,70,80,70,95,70
+088 | https://img.pokemondb.net/sprites/sword-shield/icon/grimer.png,Grimer,['POISON'],325,80,80,50,40,50,25
+089 | https://img.pokemondb.net/sprites/sword-shield/icon/muk.png,Muk,['POISON'],500,105,105,75,65,100,50
+090 | https://img.pokemondb.net/sprites/sword-shield/icon/shellder.png,Shellder,['WATER'],305,30,65,100,45,25,40
+091 | https://img.pokemondb.net/sprites/sword-shield/icon/cloyster.png,Cloyster,"['WATER', 'ICE']",525,50,95,180,85,45,70
+092 | https://img.pokemondb.net/sprites/sword-shield/icon/gastly.png,Gastly,"['GHOST', 'POISON']",310,30,35,30,100,35,80
+093 | https://img.pokemondb.net/sprites/sword-shield/icon/haunter.png,Haunter,"['GHOST', 'POISON']",405,45,50,45,115,55,95
+094 | https://img.pokemondb.net/sprites/sword-shield/icon/gengar.png,Gengar,"['GHOST', 'POISON']",500,60,65,60,130,75,110
+095 | https://img.pokemondb.net/sprites/sword-shield/icon/onix.png,Onix,"['ROCK', 'GROUND']",385,35,45,160,30,45,70
+096 | https://img.pokemondb.net/sprites/sword-shield/icon/drowzee.png,Drowzee,['PSYCHIC'],328,60,48,45,43,90,42
+097 | https://img.pokemondb.net/sprites/sword-shield/icon/hypno.png,Hypno,['PSYCHIC'],483,85,73,70,73,115,67
+098 | https://img.pokemondb.net/sprites/sword-shield/icon/krabby.png,Krabby,['WATER'],325,30,105,90,25,25,50
+099 | https://img.pokemondb.net/sprites/sword-shield/icon/kingler.png,Kingler,['WATER'],475,55,130,115,50,50,75
+100 | https://img.pokemondb.net/sprites/sword-shield/icon/voltorb.png,Voltorb,['ELECTRIC'],330,40,30,50,55,55,100
+101 | https://img.pokemondb.net/sprites/sword-shield/icon/electrode.png,Electrode,['ELECTRIC'],490,60,50,70,80,80,150
+102 | https://img.pokemondb.net/sprites/sword-shield/icon/exeggcute.png,Exeggcute,"['GRASS', 'PSYCHIC']",325,60,40,80,60,45,40
+103 | https://img.pokemondb.net/sprites/sword-shield/icon/exeggutor.png,Exeggutor,"['GRASS', 'PSYCHIC']",530,95,95,85,125,75,55
+104 | https://img.pokemondb.net/sprites/sword-shield/icon/cubone.png,Cubone,['GROUND'],320,50,50,95,40,50,35
+105 | https://img.pokemondb.net/sprites/sword-shield/icon/marowak.png,Marowak,['GROUND'],425,60,80,110,50,80,45
+106 | https://img.pokemondb.net/sprites/sword-shield/icon/hitmonlee.png,Hitmonlee,['FIGHTING'],455,50,120,53,35,110,87
+107 | https://img.pokemondb.net/sprites/sword-shield/icon/hitmonchan.png,Hitmonchan,['FIGHTING'],455,50,105,79,35,110,76
+108 | https://img.pokemondb.net/sprites/sword-shield/icon/lickitung.png,Lickitung,['NORMAL'],385,90,55,75,60,75,30
+109 | https://img.pokemondb.net/sprites/sword-shield/icon/koffing.png,Koffing,['POISON'],340,40,65,95,60,45,35
+110 | https://img.pokemondb.net/sprites/sword-shield/icon/weezing.png,Weezing,['POISON'],490,65,90,120,85,70,60
+111 | https://img.pokemondb.net/sprites/sword-shield/icon/rhyhorn.png,Rhyhorn,"['GROUND', 'ROCK']",345,80,85,95,30,30,25
+112 | https://img.pokemondb.net/sprites/sword-shield/icon/rhydon.png,Rhydon,"['GROUND', 'ROCK']",485,105,130,120,45,45,40
+113 | https://img.pokemondb.net/sprites/sword-shield/icon/chansey.png,Chansey,['NORMAL'],450,250,5,5,35,105,50
+114 | https://img.pokemondb.net/sprites/sword-shield/icon/tangela.png,Tangela,['GRASS'],435,65,55,115,100,40,60
+115 | https://img.pokemondb.net/sprites/sword-shield/icon/kangaskhan.png,Kangaskhan,['NORMAL'],490,105,95,80,40,80,90
+116 | https://img.pokemondb.net/sprites/sword-shield/icon/horsea.png,Horsea,['WATER'],295,30,40,70,70,25,60
+117 | https://img.pokemondb.net/sprites/sword-shield/icon/seadra.png,Seadra,['WATER'],440,55,65,95,95,45,85
+118 | https://img.pokemondb.net/sprites/sword-shield/icon/goldeen.png,Goldeen,['WATER'],320,45,67,60,35,50,63
+119 | https://img.pokemondb.net/sprites/sword-shield/icon/seaking.png,Seaking,['WATER'],450,80,92,65,65,80,68
+120 | https://img.pokemondb.net/sprites/sword-shield/icon/staryu.png,Staryu,['WATER'],340,30,45,55,70,55,85
+121 | https://img.pokemondb.net/sprites/sword-shield/icon/starmie.png,Starmie,"['WATER', 'PSYCHIC']",520,60,75,85,100,85,115
+122 | https://img.pokemondb.net/sprites/sword-shield/icon/mr-mime.png,Mr. Mime,"['PSYCHIC', 'FAIRY']",460,40,45,65,100,120,90
+123 | https://img.pokemondb.net/sprites/sword-shield/icon/scyther.png,Scyther,"['BUG', 'FLYING']",500,70,110,80,55,80,105
+124 | https://img.pokemondb.net/sprites/sword-shield/icon/jynx.png,Jynx,"['ICE', 'PSYCHIC']",455,65,50,35,115,95,95
+125 | https://img.pokemondb.net/sprites/sword-shield/icon/electabuzz.png,Electabuzz,['ELECTRIC'],490,65,83,57,95,85,105
+126 | https://img.pokemondb.net/sprites/sword-shield/icon/magmar.png,Magmar,['FIRE'],495,65,95,57,100,85,93
+127 | https://img.pokemondb.net/sprites/sword-shield/icon/pinsir.png,Pinsir,['BUG'],500,65,125,100,55,70,85
+128 | https://img.pokemondb.net/sprites/sword-shield/icon/tauros.png,Tauros,['NORMAL'],490,75,100,95,40,70,110
+129 | https://img.pokemondb.net/sprites/sword-shield/icon/magikarp.png,Magikarp,['WATER'],200,20,10,55,15,20,80
+130 | https://img.pokemondb.net/sprites/sword-shield/icon/gyarados.png,Gyarados,"['WATER', 'FLYING']",540,95,125,79,60,100,81
+131 | https://img.pokemondb.net/sprites/sword-shield/icon/lapras.png,Lapras,"['WATER', 'ICE']",535,130,85,80,85,95,60
+132 | https://img.pokemondb.net/sprites/sword-shield/icon/ditto.png,Ditto,['NORMAL'],288,48,48,48,48,48,48
+133 | https://img.pokemondb.net/sprites/sword-shield/icon/eevee.png,Eevee,['NORMAL'],325,55,55,50,45,65,55
+134 | https://img.pokemondb.net/sprites/sword-shield/icon/vaporeon.png,Vaporeon,['WATER'],525,130,65,60,110,95,65
+135 | https://img.pokemondb.net/sprites/sword-shield/icon/jolteon.png,Jolteon,['ELECTRIC'],525,65,65,60,110,95,130
+136 | https://img.pokemondb.net/sprites/sword-shield/icon/flareon.png,Flareon,['FIRE'],525,65,130,60,95,110,65
+137 | https://img.pokemondb.net/sprites/sword-shield/icon/porygon.png,Porygon,['NORMAL'],395,65,60,70,85,75,40
+138 | https://img.pokemondb.net/sprites/sword-shield/icon/omanyte.png,Omanyte,"['ROCK', 'WATER']",355,35,40,100,90,55,35
+139 | https://img.pokemondb.net/sprites/sword-shield/icon/omastar.png,Omastar,"['ROCK', 'WATER']",495,70,60,125,115,70,55
+140 | https://img.pokemondb.net/sprites/sword-shield/icon/kabuto.png,Kabuto,"['ROCK', 'WATER']",355,30,80,90,55,45,55
+141 | https://img.pokemondb.net/sprites/sword-shield/icon/kabutops.png,Kabutops,"['ROCK', 'WATER']",495,60,115,105,65,70,80
+142 | https://img.pokemondb.net/sprites/sword-shield/icon/aerodactyl.png,Aerodactyl,"['ROCK', 'FLYING']",515,80,105,65,60,75,130
+143 | https://img.pokemondb.net/sprites/sword-shield/icon/snorlax.png,Snorlax,['NORMAL'],540,160,110,65,65,110,30
+144 | https://img.pokemondb.net/sprites/sword-shield/icon/articuno.png,Articuno,"['ICE', 'FLYING']",580,90,85,100,95,125,85
+145 | https://img.pokemondb.net/sprites/sword-shield/icon/zapdos.png,Zapdos,"['ELECTRIC', 'FLYING']",580,90,90,85,125,90,100
+146 | https://img.pokemondb.net/sprites/sword-shield/icon/moltres.png,Moltres,"['FIRE', 'FLYING']",580,90,100,90,125,85,90
+147 | https://img.pokemondb.net/sprites/sword-shield/icon/dratini.png,Dratini,['DRAGON'],300,41,64,45,50,50,50
+148 | https://img.pokemondb.net/sprites/sword-shield/icon/dragonair.png,Dragonair,['DRAGON'],420,61,84,65,70,70,70
+149 | https://img.pokemondb.net/sprites/sword-shield/icon/dragonite.png,Dragonite,"['DRAGON', 'FLYING']",600,91,134,95,100,100,80
+150 | https://img.pokemondb.net/sprites/sword-shield/icon/mewtwo.png,Mewtwo,['PSYCHIC'],680,106,110,90,154,90,130
+151 | https://img.pokemondb.net/sprites/sword-shield/icon/mew.png,Mew,['PSYCHIC'],600,100,100,100,100,100,100
