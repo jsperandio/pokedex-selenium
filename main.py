@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support import expected_conditions as ec, wait
 from selenium.webdriver.common.by import By
 from tqdm import tqdm
 import csv
@@ -50,8 +50,7 @@ class BaseDriver:
         table_data = reference_table.find_elements_by_css_selector("tbody > tr")
         return table_data
 
-    @staticmethod
-    def iterate_table_data(table_data: List[WebElement], handler_item_action: Callable):
+    def iterate_table_data(self,table_data: List[WebElement], handler_item_action: Callable):
         for row in table_data:
             handler_item_action(row)
 
@@ -59,6 +58,33 @@ class BaseDriver:
     def get_table_row_columns(row: WebElement) -> List[WebElement]:
         columns = row.find_elements_by_css_selector("td")
         return columns
+
+    def print_table_row_data(self,row):
+        columns: List[WebElement] = self.get_table_row_columns(row)
+        print([c.text for c in columns])
+
+    def navigate_and_extract(self, row: WebElement):
+        # Get the name column
+        name = row.find_element_by_css_selector("td:nth-child(2) > a:nth-child(1)")
+        # Wait until element has enable to click
+        element_invisibility = ec.invisibility_of_element_located((By.ID, "gdpr-confirm"))
+        WebDriverWait(self.driver, 3).until(element_invisibility)
+        name.click()
+        # Wait until page load
+        element_present = ec.presence_of_element_located((By.CSS_SELECTOR, "ul.list-nav:nth-child(18)"))
+        WebDriverWait(self.driver, 3).until(element_present)
+        # Select Gen 1
+        self.driver.find_element_by_css_selector("ul.list-nav:nth-child(18) > li:nth-child(2) > a:nth-child(1)").click()
+        # Wait until table load
+        element_present = ec.presence_of_element_located((
+            By.CSS_SELECTOR,
+            "#tabs-moves-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > table:nth-child(1)"))
+        WebDriverWait(self.driver, 3).until(element_present)
+        table = self.get_table("#tabs-moves-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > table:nth-child(1)")
+        data = self.get_table_data(table)
+
+        self.iterate_table_data(data, self.print_table_row_data)
+        self.driver.execute_script("window.history.go(-2)")
 
 
 def init_driver(webdriver_path: str = "") -> webdriver:
@@ -145,6 +171,10 @@ def table_data_to_csv(headers: List[str], table_data: List[WebElement], file_nam
 
     file.close()
 
+
+
+
+
 def main():
     CURR_DIR: str = os.path.abspath(os.getcwd())
     OUTPUT_DIR: str = os.path.join(CURR_DIR, "output")
@@ -165,10 +195,10 @@ def main():
         columns: List[WebElement] = base_driver.get_table_row_columns(row)
         print([c.text for c in columns])
 
-    base_driver.iterate_table_data(table_data=data, handler_item_action=print_table_row_data)
+    # base_driver.iterate_table_data(table_data=data, handler_item_action=print_table_row_data)
+
+    base_driver.iterate_table_data(table_data=data, handler_item_action=base_driver.navigate_and_extract)
     base_driver.close()
-
-
 
     # driver: webdriver = init_driver(WEBDRIVER_PATH)
     # load_page(driver,
