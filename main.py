@@ -10,6 +10,57 @@ from tqdm import tqdm
 import csv
 
 
+class BaseDriver:
+    def __init__(self, webdriver_path: str):
+        self.driver = webdriver.Firefox(executable_path=webdriver_path)
+
+    def close(self):
+        self.driver.quit()
+
+    def load_page(self, timeout: int, page_url: str, wait_element: bool, wait_element_id: str):
+        self.driver.get(page_url)
+
+        print("Page loading...")
+
+        if wait_element:
+            try:
+                element_present = ec.presence_of_element_located((By.ID, wait_element_id))
+                WebDriverWait(self.driver, timeout).until(element_present)
+            except TimeoutException:
+                print("Timed out waiting for page to load")
+
+        privacy_byn = self.driver.find_elements(by=By.XPATH, value="/html/body/div/div/div/p[2]/button")
+        if len(privacy_byn) > 0:
+            privacy_byn[0].click()
+            print("Privacy Button Clicked")
+
+        print("Page loaded.")
+
+    def get_table(self, css_selector_path: str) -> WebElement:
+        return self.driver.find_element_by_css_selector(css_selector_path)
+
+    @staticmethod
+    def get_table_headers(reference_table: WebElement) -> List[str]:
+        headers = reference_table.find_elements_by_css_selector("thead > tr > th")
+        table_headers = [h.text for h in headers]
+        return table_headers
+
+    @staticmethod
+    def get_table_data(reference_table: WebElement) -> List[WebElement]:
+        table_data = reference_table.find_elements_by_css_selector("tbody > tr")
+        return table_data
+
+    @staticmethod
+    def iterate_table_data_links(table_data: List[WebElement], func_item_action):
+        for row in table_data:
+            func_item_action(row)
+
+    @staticmethod
+    def get_table_row_columns(row: WebElement) -> List[WebElement]:
+        columns = row.find_elements_by_css_selector("td")
+        return columns
+
+
 def init_driver(webdriver_path: str = "") -> webdriver:
     driver = webdriver.Firefox(executable_path=webdriver_path)
     return driver
@@ -45,12 +96,12 @@ def get_table_headers(driver: webdriver) -> List[str]:
     return table_headers
 
 
-def get_table_data(driver: webdriver) -> List[WebElement]:
-    table_data = driver.find_elements_by_css_selector("#pokedex > tbody > tr")
+def get_table_data(driver: webdriver, css_selector_path: str) -> List[WebElement]:
+    table_data = driver.find_elements_by_css_selector(css_selector_path)
     return table_data
 
 
-def table_data_to_csv(headers, table_data, file_name: str):
+def table_data_to_csv(headers: List[str], table_data: List[WebElement], file_name: str):
     file = open(file_name, "w", newline='', encoding='utf-8')
 
     writer = csv.writer(file)
@@ -95,23 +146,44 @@ def table_data_to_csv(headers, table_data, file_name: str):
     file.close()
 
 
+def table_inner_items_navigate(table_data: List[WebElement], reference_element_click: str):
+    for r in table_data:
+        r.find_element_by_css_selector(reference_element_click).click()
+        inner_table_data = get_table_data()
+
+
 def main():
     CURR_DIR: str = os.path.abspath(os.getcwd())
     OUTPUT_DIR: str = os.path.join(CURR_DIR, "output")
     WEBDRIVER_PATH: str = os.path.join(CURR_DIR, "geckodriver.exe")
 
-    driver: webdriver = init_driver(WEBDRIVER_PATH)
-    load_page(driver,
-              timeout=3,
-              page_url="https://pokemondb.net/pokedex/stats/gen1",
-              wait_element=True,
-              wait_element_id="pokedex")
+    base_driver = BaseDriver(WEBDRIVER_PATH)
+    base_driver.load_page(
+        timeout=3,
+        page_url="https://pokemondb.net/pokedex/stats/gen1",
+        wait_element=True,
+        wait_element_id="pokedex"
+    )
 
-    table_headers: List[str] = get_table_headers(driver)
-    table_data: List[WebElement] = get_table_data(driver)
-    table_data_to_csv(table_headers, table_data, os.path.join(OUTPUT_DIR, "pokedex.csv"))
+    table = base_driver.get_table("#pokedex")
+    data = base_driver.get_table_data(table)
+    for row in data:
+        columns = base_driver.get_table_row_columns(row)
+        print([c.text for c in columns])
 
-    close_driver(driver)
+
+    # driver: webdriver = init_driver(WEBDRIVER_PATH)
+    # load_page(driver,
+    #           timeout=3,
+    #           page_url="https://pokemondb.net/pokedex/stats/gen1",
+    #           wait_element=True,
+    #           wait_element_id="pokedex")
+    #
+    # table_headers: List[str] = get_table_headers(driver)
+    # table_data: List[WebElement] = get_table_data(driver, "#pokedex > tbody > tr")
+    # table_data_to_csv(table_headers, table_data, os.path.join(OUTPUT_DIR, "pokedex.csv"))
+    #
+    # close_driver(driver)
 
 
 if __name__ == "__main__":
