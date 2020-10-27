@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Callable
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.remote.webelement import WebElement
@@ -51,9 +51,9 @@ class BaseDriver:
         return table_data
 
     @staticmethod
-    def iterate_table_data_links(table_data: List[WebElement], func_item_action):
+    def iterate_table_data(table_data: List[WebElement], handler_item_action: Callable):
         for row in table_data:
-            func_item_action(row)
+            handler_item_action(row)
 
     @staticmethod
     def get_table_row_columns(row: WebElement) -> List[WebElement]:
@@ -145,13 +145,6 @@ def table_data_to_csv(headers: List[str], table_data: List[WebElement], file_nam
 
     file.close()
 
-
-def table_inner_items_navigate(table_data: List[WebElement], reference_element_click: str):
-    for r in table_data:
-        r.find_element_by_css_selector(reference_element_click).click()
-        inner_table_data = get_table_data()
-
-
 def main():
     CURR_DIR: str = os.path.abspath(os.getcwd())
     OUTPUT_DIR: str = os.path.join(CURR_DIR, "output")
@@ -167,9 +160,14 @@ def main():
 
     table = base_driver.get_table("#pokedex")
     data = base_driver.get_table_data(table)
-    for row in data:
-        columns = base_driver.get_table_row_columns(row)
+
+    def print_table_row_data(row):
+        columns: List[WebElement] = base_driver.get_table_row_columns(row)
         print([c.text for c in columns])
+
+    base_driver.iterate_table_data(table_data=data, handler_item_action=print_table_row_data)
+    base_driver.close()
+
 
 
     # driver: webdriver = init_driver(WEBDRIVER_PATH)
