@@ -12,8 +12,9 @@ from tqdm import tqdm
 
 
 class BaseDriver:
-    def __init__(self, webdriver_path: str):
+    def __init__(self, webdriver_path: str, timeout: int = 3):
         self.driver = webdriver.Firefox(executable_path=webdriver_path)
+        self.timeout = timeout
 
     def close(self):
         self.driver.quit()
@@ -21,8 +22,9 @@ class BaseDriver:
     def browser_history_back(self, back_count: int = 1):
         self.driver.execute_script("window.history.go(-" + back_count.__str__() + ")")
 
-    def load_page(self, timeout: int, page_url: str, wait_element: bool, wait_element_id: str):
+    def load_page(self, page_url: str, wait_element: bool, wait_element_id: str, timeout: int = 0):
         self.driver.get(page_url)
+        timeout = (timeout == 0) if self.timeout else timeout
 
         print("Page loading...")
 
@@ -68,7 +70,7 @@ class BaseDriver:
         columns: List[WebElement] = self.get_table_row_columns(row)
         print([c.text for c in columns])
 
-    def lazy_table_extract(self,table_headers: List[str], table_data: List[WebElement], csv_name: str) -> list:
+    def lazy_table_extract(self, table_headers: List[str], table_data: List[WebElement], csv_name: str) -> list:
         file = open(csv_name, "w", newline='', encoding='utf-8')
         writer = csv.writer(file)
         table_data_extracted: list = [table_headers]
@@ -85,6 +87,12 @@ class BaseDriver:
         print(f"Table extracted to: {csv_name}")
 
         return table_data_extracted
+
+    def lazy_table_to_csv(self, css_selector_table: str, csv_name: str):
+        table = self.get_table(css_selector_table)
+        headers = self.get_table_headers(table)
+        data = self.get_table_data(table)
+        self.lazy_table_extract(table_headers=headers, table_data=data,csv_name=csv_name)
 
     def navigate_and_extract(self, row: WebElement):
         # Get the name column
@@ -207,19 +215,11 @@ def main():
 
     base_driver = BaseDriver(WEBDRIVER_PATH)
     base_driver.load_page(
-        timeout=3,
         page_url="https://pokemondb.net/pokedex/stats/gen1",
         wait_element=True,
         wait_element_id="pokedex"
     )
-
-    table = base_driver.get_table("#pokedex")
-    headers = base_driver.get_table_headers(table)
-    data = base_driver.get_table_data(table)
-    base_driver.lazy_table_extract(table_headers=headers, table_data=data,
-                                   csv_name=os.path.join(OUTPUT_DIR, "pokedex.csv"))
-
-    # base_driver.iterate_table_data(table_data=data, handler_item_action=base_driver.print_table_row_data)
+    base_driver.lazy_table_to_csv("#pokedex",os.path.join(OUTPUT_DIR, "pokedex.csv"))
     base_driver.close()
 
     # driver: webdriver = init_driver(WEBDRIVER_PATH)
