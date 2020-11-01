@@ -16,6 +16,12 @@ class BaseDriver:
         self.driver = webdriver.Firefox(executable_path=webdriver_path)
         self.timeout = timeout
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.close()
+
     def close(self):
         self.driver.quit()
 
@@ -213,15 +219,15 @@ def main():
     OUTPUT_DIR: str = os.path.join(CURR_DIR, "output")
     WEBDRIVER_PATH: str = os.path.join(CURR_DIR, "geckodriver.exe")
 
-    base_driver = BaseDriver(WEBDRIVER_PATH)
-    base_driver.load_page(
-        page_url="https://pokemondb.net/pokedex/stats/gen1",
-        wait_element=True,
-        wait_element_id="pokedex"
-    )
-    base_driver.lazy_table_to_csv("#pokedex",os.path.join(OUTPUT_DIR, "pokedex.csv"))
-    base_driver.close()
-
+    with BaseDriver(WEBDRIVER_PATH) as base_driver:
+        base_driver.load_page(
+            page_url="https://pokemondb.net/pokedex/stats/gen1",
+            wait_element=True,
+            wait_element_id="pokedex"
+        )
+        base_driver.lazy_table_to_csv(
+            css_selector_table="#pokedex",
+            csv_name=os.path.join(OUTPUT_DIR, "pokedex.csv"))
     # driver: webdriver = init_driver(WEBDRIVER_PATH)
     # load_page(driver,
     #           timeout=3,
