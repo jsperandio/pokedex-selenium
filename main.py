@@ -1,11 +1,12 @@
 import csv
 import logging
 import os
-import sys
 from typing import List
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from tqdm import tqdm
+
 from base_driver import BaseDriver
 
 
@@ -58,7 +59,8 @@ def main():
     CURR_DIR: str = os.path.abspath(os.getcwd())
     OUTPUT_DIR: str = os.path.join(CURR_DIR, "output")
     WEBDRIVER_PATH: str = os.path.join(CURR_DIR, "resource/geckodriver.exe")
-    logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+    logging.basicConfig(level=logging.DEBUG)
+    logging.getLogger("urllib3").setLevel(logging.ERROR)
 
     with BaseDriver(WEBDRIVER_PATH) as base_driver:
         base_driver.load_page(
@@ -74,11 +76,26 @@ def main():
         base_driver.timeout = 30
         # skip table header
         # ['#', 'Name', 'Type', 'Total', 'HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed']
-        for r in table_extracted[1:]:
+        pbar = tqdm(table_extracted[1:], desc="Pokemons", colour='green', leave=False, unit_scale=True)
+        for r in pbar:
             # navigate to first item on Name column
-            base_driver.search_link_text_and_navigate(r[1], True, (By.CLASS_NAME, "data-table"))
+            base_driver.search_link_text_and_navigate(link_text=r[1], wait_element=True,
+                                                      wait_element_locator=(By.CLASS_NAME, "data-table"))
+            # get the moves generations list
+            moves_generations_list = base_driver.driver.find_element_by_xpath("/html/body/main/ul[3]")
+            first_gen = moves_generations_list.find_element_by_link_text("1")
+            base_driver.click_and_wait(element=first_gen, wait_element_locator=(By.CLASS_NAME, "data-table"))
+            pbar.set_description(f"Extracting moves from {r[1]}")
+            base_driver.lazy_table_to_csv(
+                css_selector_table="#tabs-moves-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > "
+                                   "table:nth-child(1)",
+                csv_name=os.path.join(OUTPUT_DIR, f"moves/moves_{r[1]}.csv"),
+                use_progress_bar=False
+            )
             base_driver.driver.back()
-            logging.debug("Going Back")
+            # logging.debug("Going Back")
+            base_driver.driver.back()
+            # logging.debug("Going Back")
 
 
 if __name__ == "__main__":
