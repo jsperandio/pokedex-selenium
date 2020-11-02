@@ -1,56 +1,12 @@
 import csv
+import logging
 import os
+import sys
 from typing import List
-
-from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.support.ui import WebDriverWait
 from tqdm import tqdm
-
 from base_driver import BaseDriver
-
-
-def init_driver(webdriver_path: str = "") -> webdriver:
-    driver = webdriver.Firefox(executable_path=webdriver_path)
-    return driver
-
-
-def close_driver(driver: webdriver):
-    driver.quit()
-
-
-def load_page(driver: webdriver, timeout: int, page_url: str, wait_element: bool, wait_element_id: str):
-    driver.get(page_url)
-
-    print("Page loading...")
-
-    if wait_element:
-        try:
-            element_present = ec.presence_of_element_located((By.ID, wait_element_id))
-            WebDriverWait(driver, timeout).until(element_present)
-        except TimeoutException:
-            print("Timed out waiting for page to load")
-
-    privacy_byn = driver.find_elements(by=By.XPATH, value="/html/body/div/div/div/p[2]/button")
-    if len(privacy_byn) > 0:
-        privacy_byn[0].click()
-        print("Privacy Button Clicked")
-
-    print("Page loaded.")
-
-
-def get_table_headers(driver: webdriver) -> List[str]:
-    headers = driver.find_elements_by_css_selector("#pokedex > thead > tr > th")
-    table_headers = [h.text for h in headers]
-    return table_headers
-
-
-def get_table_data(driver: webdriver, css_selector_path: str) -> List[WebElement]:
-    table_data = driver.find_elements_by_css_selector(css_selector_path)
-    return table_data
 
 
 def table_data_to_csv(headers: List[str], table_data: List[WebElement], file_name: str):
@@ -102,28 +58,27 @@ def main():
     CURR_DIR: str = os.path.abspath(os.getcwd())
     OUTPUT_DIR: str = os.path.join(CURR_DIR, "output")
     WEBDRIVER_PATH: str = os.path.join(CURR_DIR, "resource/geckodriver.exe")
+    logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
     with BaseDriver(WEBDRIVER_PATH) as base_driver:
         base_driver.load_page(
             page_url="https://pokemondb.net/pokedex/stats/gen1",
             wait_element=True,
-            wait_element_id="pokedex"
+            wait_element_id="pokedex",
+            timeout=5
         )
-        base_driver.lazy_table_to_csv(
+        table_extracted = base_driver.lazy_table_to_csv(
             css_selector_table="#pokedex",
             csv_name=os.path.join(OUTPUT_DIR, "pokedex.csv"))
-    # driver: webdriver = init_driver(WEBDRIVER_PATH)
-    # load_page(driver,
-    #           timeout=3,
-    #           page_url="https://pokemondb.net/pokedex/stats/gen1",
-    #           wait_element=True,
-    #           wait_element_id="pokedex")
-    #
-    # table_headers: List[str] = get_table_headers(driver)
-    # table_data: List[WebElement] = get_table_data(driver, "#pokedex > tbody > tr")
-    # table_data_to_csv(table_headers, table_data, os.path.join(OUTPUT_DIR, "pokedex.csv"))
-    #
-    # close_driver(driver)
+
+        base_driver.timeout = 30
+        # skip table header
+        # ['#', 'Name', 'Type', 'Total', 'HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed']
+        for r in table_extracted[1:]:
+            # navigate to first item on Name column
+            base_driver.search_link_text_and_navigate(r[1], True, (By.CLASS_NAME, "data-table"))
+            base_driver.driver.back()
+            logging.debug("Going Back")
 
 
 if __name__ == "__main__":
