@@ -15,7 +15,8 @@ from tqdm import tqdm
 class BaseDriver:
     def __init__(self, webdriver_path: str, timeout: int = 3):
         LOGGER.setLevel(logging.ERROR)
-        self.driver = webdriver.Firefox(executable_path=webdriver_path)
+        # self.driver = webdriver.Firefox(executable_path=webdriver_path)
+        self.driver = webdriver.Chrome(executable_path=webdriver_path)
         self.timeout = timeout
 
     def __enter__(self):
@@ -28,9 +29,12 @@ class BaseDriver:
         self.driver.quit()
 
     def browser_history_back(self, back_count: int = 1):
-        self.driver.execute_script("window.history.go(-" + back_count.__str__() + ")")
+        # this does not work very well
+        # self.driver.execute_script("window.history.go(-" + back_count.__str__() + ")")
+        for i in range(back_count):
+            self.driver.back()
 
-    def load_page(self, page_url: str, wait_element: bool, wait_element_id: str, timeout: int = 0):
+    def load_page(self, page_url: str, wait_element: bool = False, wait_element_id: str = "", timeout: int = 0):
         self.driver.get(page_url)
         timeout = (timeout == 0) if self.timeout else timeout
 
@@ -106,6 +110,15 @@ class BaseDriver:
         table_extracted = self.lazy_table_extract(table_headers=headers, table_data=data, csv_name=csv_name,
                                                   use_progress_bar=use_progress_bar)
         return table_extracted
+
+    def search_element_by_locator(self, element_locator: Tuple = (By.ID, "html")):
+        return self.driver.find_element(by=element_locator[0], value=element_locator[1])
+
+    def search_link_by_text_and_attribute(self, link_text: str, attribute: Tuple = ("title", "link")):
+        links = self.driver.find_elements_by_link_text(link_text)
+        for l_ele in links:
+            if l_ele.get_attribute(attribute[0]) == attribute[1]:
+                return l_ele
 
     def search_link_text_and_navigate(self, link_text: str, wait_element: bool = False,
                                       wait_element_locator: Tuple = (By.ID, "html")):
