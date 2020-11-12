@@ -5,6 +5,7 @@ from typing import List, Callable, Tuple
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.remote_connection import LOGGER
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,7 +14,9 @@ from tqdm import tqdm
 
 class BaseDriver:
     def __init__(self, webdriver_path: str, timeout: int = 3):
-        self.driver = webdriver.Firefox(executable_path=webdriver_path)
+        LOGGER.setLevel(logging.ERROR)
+        # self.driver = webdriver.Firefox(executable_path=webdriver_path)
+        self.driver = webdriver.Chrome(executable_path=webdriver_path)
         self.timeout = timeout
 
     def __enter__(self):
@@ -26,9 +29,12 @@ class BaseDriver:
         self.driver.quit()
 
     def browser_history_back(self, back_count: int = 1):
-        self.driver.execute_script("window.history.go(-" + back_count.__str__() + ")")
+        # this does not work very well
+        # self.driver.execute_script("window.history.go(-" + back_count.__str__() + ")")
+        for i in range(back_count):
+            self.driver.back()
 
-    def load_page(self, page_url: str, wait_element: bool, wait_element_id: str, timeout: int = 0):
+    def load_page(self, page_url: str, wait_element: bool = False, wait_element_id: str = "", timeout: int = 0):
         self.driver.get(page_url)
         timeout = (timeout == 0) if self.timeout else timeout
 
@@ -76,30 +82,43 @@ class BaseDriver:
         columns: List[WebElement] = self.get_table_row_columns(row)
         logging.info([c.text for c in columns])
 
-    def lazy_table_extract(self, table_headers: List[str], table_data: List[WebElement], csv_name: str) -> list:
+    def lazy_table_extract(self, table_headers: List[str], table_data: List[WebElement], csv_name: str,
+                           use_progress_bar: bool = True) -> list:
         file = open(csv_name, "w", newline='', encoding='utf-8')
         writer = csv.writer(file)
         table_data_extracted: list = [table_headers]
 
-        logging.debug("Lazy extracting init")
+        data_iteration = table_data
+        if use_progress_bar:
+            data_iteration = tqdm(table_data, colour='blue', desc="Pokedex")
 
-        for row in tqdm(table_data):
+        for row in data_iteration:
             columns: List[WebElement] = self.get_table_row_columns(row)
             table_data_extracted.append([str(c.text).replace('\n', '/').replace('\r', '') for c in columns])
 
         writer.writerows(table_data_extracted)
         file.close()
 
-        logging.info(f"Table extracted to: {csv_name}")
+        # logging.info(f"Table extracted to: {csv_name}")
 
         return table_data_extracted
 
-    def lazy_table_to_csv(self, css_selector_table: str, csv_name: str) -> list:
+    def lazy_table_to_csv(self, css_selector_table: str, csv_name: str, use_progress_bar: bool = True) -> list:
         table = self.get_table(css_selector_table)
         headers = self.get_table_headers(table)
         data = self.get_table_data(table)
-        table_extracted = self.lazy_table_extract(table_headers=headers, table_data=data, csv_name=csv_name)
+        table_extracted = self.lazy_table_extract(table_headers=headers, table_data=data, csv_name=csv_name,
+                                                  use_progress_bar=use_progress_bar)
         return table_extracted
+
+    def search_element_by_locator(self, element_locator: Tuple = (By.ID, "html")):
+        return self.driver.find_element(by=element_locator[0], value=element_locator[1])
+
+    def search_link_by_text_and_attribute(self, link_text: str, attribute: Tuple = ("title", "link")):
+        links = self.driver.find_elements_by_link_text(link_text)
+        for l_ele in links:
+            if l_ele.get_attribute(attribute[0]) == attribute[1]:
+                return l_ele
 
     def search_link_text_and_navigate(self, link_text: str, wait_element: bool = False,
                                       wait_element_locator: Tuple = (By.ID, "html")):
@@ -107,7 +126,7 @@ class BaseDriver:
             element_clickable = ec.element_to_be_clickable((By.LINK_TEXT, link_text))
             WebDriverWait(self.driver, self.timeout).until(element_clickable)
             link_element = self.driver.find_element_by_link_text(link_text)
-            logging.debug(f"Clicked at {link_text}")
+            # logging.debug(f"Clicked at {link_text}")
             link_element.click()
         except Exception as e:
             logging.error(e.__str__())
@@ -118,6 +137,14 @@ class BaseDriver:
                 WebDriverWait(self.driver, self.timeout).until(element_present)
             except TimeoutException:
                 logging.error(f"Timed out waiting for page to load: {link_text}")
+
+    def click_and_wait(self, element: WebElement, wait_element_locator: Tuple = (By.ID, "html")):
+        try:
+            element_present = ec.presence_of_all_elements_located(wait_element_locator)
+            WebDriverWait(self.driver, self.timeout).until(element_present)
+            element.click()
+        except TimeoutException:
+            logging.error(f"Timed out waiting for click on: {wait_element_locator}")
 
     def wait_for(self, lambda_callable):
         WebDriverWait(self.driver, timeout=self.timeout).until(lambda_callable)
