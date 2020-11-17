@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Bite,DARK,Special,60,100
+1,Dragon Rage,DRAGON,Special,—,100
+1,Hydro Pump,WATER,Special,110,80
+1,Leer,NORMAL,Status,—,100
+20,Bite,DARK,Special,60,100
+25,Dragon Rage,DRAGON,Special,—,100
+32,Leer,NORMAL,Status,—,100
+41,Hydro Pump,WATER,Special,110,80
+52,Hyper Beam,NORMAL,Physical,150,90

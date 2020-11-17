@@ -1,0 +1,7 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Tackle,NORMAL,Physical,40,100
+21,Stomp,NORMAL,Physical,65,100
+28,Tail Whip,NORMAL,Status,—,100
+35,Leer,NORMAL,Status,—,100
+44,Rage,NORMAL,Physical,20,100
+51,Take Down,NORMAL,Physical,90,85

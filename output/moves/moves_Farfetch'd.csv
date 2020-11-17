@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Peck,FLYING,Physical,35,100
+1,Sand Attack,GROUND,Status,—,100
+7,Leer,NORMAL,Status,—,100
+15,Fury Attack,NORMAL,Physical,15,85
+23,Swords Dance,NORMAL,Status,—,—
+31,Agility,PSYCHIC,Status,—,—
+39,Slash,NORMAL,Physical,70,100

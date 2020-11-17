@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Smog,POISON,Physical,30,70
+1,Tackle,NORMAL,Physical,40,100
+32,Sludge,POISON,Physical,65,100
+37,Smokescreen,NORMAL,Status,—,100
+40,Self-Destruct,NORMAL,Physical,200,100
+45,Haze,ICE,Status,—,—
+48,Explosion,NORMAL,Physical,250,100

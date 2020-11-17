@@ -1,0 +1,11 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Disable,NORMAL,,—,100
+1,Leech Life,BUG,,80,100
+1,Poison Powder,POISON,,—,75
+1,Tackle,NORMAL,,40,100
+24,Poison Powder,POISON,,—,75
+27,Leech Life,BUG,,80,100
+30,Stun Spore,GRASS,,—,75
+38,Psybeam,PSYCHIC,,65,100
+43,Sleep Powder,GRASS,,—,75
+50,Psychic,PSYCHIC,,90,100

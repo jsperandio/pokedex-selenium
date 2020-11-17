@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Lovely Kiss,NORMAL,Status,—,75
+1,Pound,NORMAL,Physical,40,100
+18,Lick,GHOST,Physical,30,100
+23,Double Slap,NORMAL,Physical,15,85
+31,Ice Punch,ICE,Special,75,100
+39,Body Slam,NORMAL,Physical,85,100
+47,Thrash,NORMAL,Physical,120,100
+58,Blizzard,ICE,Special,110,70

@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Karate Chop,FIGHTING,Physical,50,100
+1,Leer,NORMAL,Status,—,100
+1,Low Kick,FIGHTING,Physical,—,100
+20,Low Kick,FIGHTING,Physical,—,100
+25,Leer,NORMAL,Status,—,100
+36,Focus Energy,NORMAL,Status,—,—
+44,Seismic Toss,FIGHTING,Physical,—,100
+52,Submission,FIGHTING,Physical,80,80

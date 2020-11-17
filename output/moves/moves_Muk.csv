@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Disable,NORMAL,Status,—,100
+1,Poison Gas,POISON,Status,—,90
+1,Pound,NORMAL,Physical,40,100
+30,Poison Gas,POISON,Status,—,90
+33,Minimize,NORMAL,Status,—,—
+37,Sludge,POISON,Physical,65,100
+45,Harden,NORMAL,Status,—,—
+53,Screech,NORMAL,Status,—,85
+60,Acid Armor,POISON,Status,—,—

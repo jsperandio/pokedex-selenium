@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Sand Attack,GROUND,Status,—,100
+1,Scratch,NORMAL,Physical,40,100
+10,Sand Attack,GROUND,Status,—,100
+17,Slash,NORMAL,Physical,70,100
+27,Poison Sting,POISON,Physical,15,100
+36,Swift,NORMAL,Physical,60,∞
+47,Fury Swipes,NORMAL,Physical,18,80

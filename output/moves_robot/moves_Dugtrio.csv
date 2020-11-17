@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Dig,GROUND,,80,100
+1,Growl,NORMAL,,—,100
+1,Scratch,NORMAL,,40,100
+15,Growl,NORMAL,,—,100
+19,Dig,GROUND,,80,100
+24,Sand Attack,GROUND,,—,100
+35,Slash,NORMAL,,70,100
+47,Earthquake,GROUND,,100,100

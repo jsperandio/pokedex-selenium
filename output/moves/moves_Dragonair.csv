@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Leer,NORMAL,Status,—,100
+1,Thunder Wave,ELECTRIC,Status,—,90
+1,Wrap,NORMAL,Physical,15,90
+10,Thunder Wave,ELECTRIC,Status,—,90
+20,Agility,PSYCHIC,Status,—,—
+35,Slam,NORMAL,Physical,80,75
+45,Dragon Rage,DRAGON,Special,—,100
+55,Hyper Beam,NORMAL,Physical,150,90

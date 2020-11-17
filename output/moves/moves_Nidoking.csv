@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Horn Attack,NORMAL,Physical,65,100
+1,Poison Sting,POISON,Physical,15,100
+1,Tackle,NORMAL,Physical,40,100
+1,Thrash,NORMAL,Physical,120,100
+8,Horn Attack,NORMAL,Physical,65,100
+14,Poison Sting,POISON,Physical,15,100
+23,Thrash,NORMAL,Physical,120,100

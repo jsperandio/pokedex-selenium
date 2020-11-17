@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Growl,NORMAL,,—,100
+1,Tackle,NORMAL,,40,100
+8,Scratch,NORMAL,,40,100
+14,Poison Sting,POISON,,15,100
+21,Tail Whip,NORMAL,,—,100
+29,Bite,DARK,,60,100
+36,Fury Swipes,NORMAL,,18,80
+43,Double Kick,FIGHTING,,30,100

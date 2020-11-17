@@ -1,0 +1,6 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Fire Spin,FIRE,Special,35,85
+1,Peck,FLYING,Physical,35,100
+51,Leer,NORMAL,Status,—,100
+55,Agility,PSYCHIC,Status,—,—
+60,Sky Attack,FLYING,Physical,140,90

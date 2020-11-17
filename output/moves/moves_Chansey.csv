@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Double Slap,NORMAL,Physical,15,85
+1,Pound,NORMAL,Physical,40,100
+24,Sing,NORMAL,Status,—,55
+30,Growl,NORMAL,Status,—,100
+38,Minimize,NORMAL,Status,—,—
+44,Defense Curl,NORMAL,Status,—,—
+48,Light Screen,PSYCHIC,Status,—,—
+54,Double-Edge,NORMAL,Physical,120,100

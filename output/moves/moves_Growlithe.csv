@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Bite,DARK,Special,60,100
+1,Roar,NORMAL,Status,—,—
+18,Ember,FIRE,Special,40,100
+23,Leer,NORMAL,Status,—,100
+30,Take Down,NORMAL,Physical,90,85
+39,Agility,PSYCHIC,Status,—,—
+50,Flamethrower,FIRE,Special,90,100
