@@ -15,8 +15,12 @@ from tqdm import tqdm
 class BaseDriver:
     def __init__(self, webdriver_path: str, timeout: int = 3):
         LOGGER.setLevel(logging.ERROR)
-        # self.driver = webdriver.Firefox(executable_path=webdriver_path)
-        self.driver = webdriver.Chrome(executable_path=webdriver_path)
+
+        if webdriver_path.find('geckodriver.exe'):
+            self.driver = webdriver.Firefox(executable_path=webdriver_path)
+        else:
+            self.driver = webdriver.Chrome(executable_path=webdriver_path)
+
         self.timeout = timeout
 
     def __enter__(self):
@@ -94,7 +98,19 @@ class BaseDriver:
 
         for row in data_iteration:
             columns: List[WebElement] = self.get_table_row_columns(row)
-            table_data_extracted.append([str(c.text).replace('\n', '/').replace('\r', '') for c in columns])
+
+            # table_data_extracted.append([str(c.text).replace('\n', '/').replace('\r', '') for c in columns])
+
+            values_list: list = list()
+            for c in columns:
+                if c.text == "":
+                    # Case don't have Text property , probably is a img , so get the title
+                    img = c.find_element_by_css_selector(":first-child")
+                    values_list.append(img.get_attribute("title"))
+                else:
+                    values_list.append(str(c.text).replace('\n', '/').replace('\r', ''))
+
+            table_data_extracted.append(values_list)
 
         writer.writerows(table_data_extracted)
         file.close()
