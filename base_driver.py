@@ -5,6 +5,7 @@ from typing import List, Callable, Tuple
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.remote.remote_connection import LOGGER
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec
@@ -13,11 +14,13 @@ from tqdm import tqdm
 
 
 class BaseDriver:
-    def __init__(self, webdriver_path: str, timeout: int = 3):
+    def __init__(self, webdriver_path: str, headless: bool = False, timeout: int = 3):
         LOGGER.setLevel(logging.ERROR)
 
         if webdriver_path.find('geckodriver.exe'):
-            self.driver = webdriver.Firefox(executable_path=webdriver_path)
+            options = Options()
+            options.headless = headless
+            self.driver = webdriver.Firefox(executable_path=webdriver_path, options=options)
         else:
             self.driver = webdriver.Chrome(executable_path=webdriver_path)
 

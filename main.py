@@ -1,5 +1,4 @@
 import logging
-import logging
 import os
 import time
 
@@ -11,10 +10,12 @@ from base_driver import BaseDriver
 
 class Config:
     def __init__(self, output_dir: str = "output", webdriver_path: str = "resource/geckodriver.exe",
+                 headless_driver: bool = False,
                  log_level: int = logging.DEBUG):
         self.CURR_DIR: str = os.path.abspath(os.getcwd())
         self.OUTPUT_DIR: str = os.path.join(self.CURR_DIR, output_dir)
         self.WEBDRIVER_PATH: str = os.path.join(self.CURR_DIR, webdriver_path)
+        self.HEADLESS_DRIVER: bool = headless_driver
 
         if not log_level:
             logging.getLogger().disabled = True
@@ -24,7 +25,7 @@ class Config:
 
 
 def extract_pokedex_robot(c: Config):
-    with BaseDriver(c.WEBDRIVER_PATH) as base_driver:
+    with BaseDriver(c.WEBDRIVER_PATH, c.HEADLESS_DRIVER) as base_driver:
         base_driver.load_page(
             page_url="https://pokemondb.net/pokedex/stats/gen1",
             wait_element=True,
@@ -63,7 +64,7 @@ def extract_pokedex_robot(c: Config):
 
 
 def extract_pokedex(c: Config):
-    with BaseDriver(c.WEBDRIVER_PATH) as base_driver:
+    with BaseDriver(c.WEBDRIVER_PATH, c.HEADLESS_DRIVER) as base_driver:
         base_driver.load_page(
             page_url="https://pokemondb.net/pokedex/stats/gen1",
             wait_element=True,
@@ -110,7 +111,7 @@ def extract_pokedex(c: Config):
 
 
 def main():
-    conf = Config(log_level=0)
+    conf = Config(log_level=0, headless_driver=False)
 
     # First way
     # extract_pokedex_robot(conf)
