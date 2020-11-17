@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Absorb,GRASS,Special,20,100
+1,Poison Powder,POISON,Status,—,75
+1,Stun Spore,GRASS,Status,—,75
+15,Poison Powder,POISON,Status,—,75
+17,Stun Spore,GRASS,Status,—,75
+19,Sleep Powder,GRASS,Status,—,75
+28,Acid,POISON,Physical,40,100
+38,Petal Dance,GRASS,Special,120,100
+52,Solar Beam,GRASS,Special,120,100

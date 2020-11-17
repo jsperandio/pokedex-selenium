@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Bite,DARK,Special,60,100
+1,Leech Life,BUG,Physical,80,100
+1,Screech,NORMAL,Status,—,85
+10,Supersonic,NORMAL,Status,—,55
+15,Bite,DARK,Special,60,100
+21,Confuse Ray,GHOST,Status,—,100
+32,Wing Attack,FLYING,Physical,60,100
+43,Haze,ICE,Status,—,—

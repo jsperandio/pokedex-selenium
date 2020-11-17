@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Leer,NORMAL,Status,—,100
+1,Scratch,NORMAL,Physical,40,100
+15,Karate Chop,FIGHTING,Physical,50,100
+21,Fury Swipes,NORMAL,Physical,18,80
+27,Focus Energy,NORMAL,Status,—,—
+33,Seismic Toss,FIGHTING,Physical,—,100
+39,Thrash,NORMAL,Physical,120,100

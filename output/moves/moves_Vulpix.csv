@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Ember,FIRE,Special,40,100
+1,Tail Whip,NORMAL,Status,—,100
+16,Quick Attack,NORMAL,Physical,40,100
+21,Roar,NORMAL,Status,—,—
+28,Confuse Ray,GHOST,Status,—,100
+35,Flamethrower,FIRE,Special,90,100
+42,Fire Spin,FIRE,Special,35,85

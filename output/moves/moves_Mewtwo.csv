@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Confusion,PSYCHIC,Special,50,100
+1,Disable,NORMAL,Status,—,100
+1,Psychic,PSYCHIC,Special,90,100
+1,Swift,NORMAL,Physical,60,∞
+63,Barrier,PSYCHIC,Status,—,—
+66,Psychic,PSYCHIC,Special,90,100
+70,Recover,NORMAL,Status,—,—
+75,Mist,ICE,Status,—,—
+81,Amnesia,PSYCHIC,Status,—,—

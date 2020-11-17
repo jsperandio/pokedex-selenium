@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Bubble,WATER,Special,40,100
+1,Leer,NORMAL,Status,—,100
+20,Vise Grip,NORMAL,Physical,55,100
+25,Guillotine,NORMAL,Physical,—,30
+30,Stomp,NORMAL,Physical,65,100
+35,Crabhammer,WATER,Special,100,90
+40,Harden,NORMAL,Status,—,—

@@ -1,0 +1,11 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Confusion,PSYCHIC,Special,50,100
+1,Disable,NORMAL,Status,—,100
+1,Hypnosis,PSYCHIC,Status,—,60
+1,Pound,NORMAL,Physical,40,100
+12,Disable,NORMAL,Status,—,100
+17,Confusion,PSYCHIC,Special,50,100
+24,Headbutt,NORMAL,Physical,70,100
+33,Poison Gas,POISON,Status,—,90
+37,Psychic,PSYCHIC,Special,90,100
+43,Meditate,PSYCHIC,Status,—,—

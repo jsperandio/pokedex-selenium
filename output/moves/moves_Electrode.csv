@@ -1,0 +1,9 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Screech,NORMAL,Status,—,85
+1,Sonic Boom,NORMAL,Physical,—,90
+1,Tackle,NORMAL,Physical,40,100
+17,Sonic Boom,NORMAL,Physical,—,90
+22,Self-Destruct,NORMAL,Physical,200,100
+29,Light Screen,PSYCHIC,Status,—,—
+40,Swift,NORMAL,Physical,60,∞
+50,Explosion,NORMAL,Physical,250,100

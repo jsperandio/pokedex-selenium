@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Ember,FIRE,Special,40,100
+1,Growl,NORMAL,Status,—,100
+1,Scratch,NORMAL,Physical,40,100
+9,Ember,FIRE,Special,40,100
+15,Leer,NORMAL,Status,—,100
+24,Rage,NORMAL,Physical,20,100
+33,Slash,NORMAL,Physical,70,100
+42,Flamethrower,FIRE,Special,90,100
+56,Fire Spin,FIRE,Special,35,85

@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Agility,PSYCHIC,Status,—,—
+1,Comet Punch,NORMAL,Physical,18,85
+33,Fire Punch,FIRE,Special,75,100
+38,Ice Punch,ICE,Special,75,100
+43,Thunder Punch,ELECTRIC,Special,75,100
+48,Mega Punch,NORMAL,Physical,80,85
+53,Counter,FIGHTING,Physical,—,100

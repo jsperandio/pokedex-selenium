@@ -1,0 +1,12 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Growl,NORMAL,,—,100
+1,Leech Seed,GRASS,,—,90
+1,Tackle,NORMAL,,40,100
+1,Vine Whip,GRASS,,45,100
+7,Leech Seed,GRASS,,—,90
+13,Vine Whip,GRASS,,45,100
+22,Poison Powder,POISON,,—,75
+30,Razor Leaf,GRASS,,55,95
+43,Growth,NORMAL,,—,—
+55,Sleep Powder,GRASS,,—,75
+65,Solar Beam,GRASS,,120,100

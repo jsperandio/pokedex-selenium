@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Bone Club,GROUND,Physical,65,85
+1,Focus Energy,NORMAL,Status,—,—
+1,Growl,NORMAL,Status,—,100
+1,Leer,NORMAL,Status,—,100
+25,Leer,NORMAL,Status,—,100
+33,Focus Energy,NORMAL,Status,—,—
+41,Thrash,NORMAL,Physical,120,100
+48,Bonemerang,GROUND,Physical,50,90
+55,Rage,NORMAL,Physical,20,100

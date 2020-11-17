@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Horn Attack,NORMAL,Physical,65,100
+1,Water Gun,WATER,Special,40,100
+1,Withdraw,WATER,Status,—,—
+34,Horn Attack,NORMAL,Physical,65,100
+39,Leer,NORMAL,Status,—,100
+44,Spike Cannon,NORMAL,Physical,20,100
+49,Hydro Pump,WATER,Special,110,80

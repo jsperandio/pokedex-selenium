@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Screech,NORMAL,Status,—,85
+1,Tackle,NORMAL,Physical,40,100
+15,Bind,NORMAL,Physical,15,85
+19,Rock Throw,ROCK,Physical,50,90
+25,Rage,NORMAL,Physical,20,100
+33,Slam,NORMAL,Physical,80,75
+43,Harden,NORMAL,Status,—,—

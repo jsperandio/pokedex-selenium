@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Horn Attack,NORMAL,Physical,65,100
+30,Stomp,NORMAL,Physical,65,100
+35,Tail Whip,NORMAL,Status,—,100
+40,Fury Attack,NORMAL,Physical,15,85
+45,Horn Drill,NORMAL,Physical,—,30
+50,Leer,NORMAL,Status,—,100
+55,Take Down,NORMAL,Physical,90,85

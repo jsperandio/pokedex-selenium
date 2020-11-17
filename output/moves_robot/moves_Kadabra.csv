@@ -1,0 +1,10 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Confusion,PSYCHIC,,50,100
+1,Disable,NORMAL,,—,100
+1,Teleport,PSYCHIC,,—,—
+16,Confusion,PSYCHIC,,50,100
+20,Disable,NORMAL,,—,100
+27,Psybeam,PSYCHIC,,65,100
+31,Recover,NORMAL,,—,—
+38,Psychic,PSYCHIC,,90,100
+42,Reflect,PSYCHIC,,—,—

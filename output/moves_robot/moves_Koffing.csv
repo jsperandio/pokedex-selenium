@@ -1,0 +1,8 @@
+Lv.,Move,Type,Cat.,Power,Acc.
+1,Smog,POISON,,30,70
+1,Tackle,NORMAL,,40,100
+32,Sludge,POISON,,65,100
+37,Smokescreen,NORMAL,,—,100
+40,Self-Destruct,NORMAL,,200,100
+45,Haze,ICE,,—,—
+48,Explosion,NORMAL,,250,100
