@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jsperandio/pokedex-selenium">
-    <img src="resource/pokedex-selenium.png" alt="Logo" width="80" height="80">
+    <img src="resource/pokedex-selenium.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">pokedex-selenium</h3>
@@ -120,11 +120,6 @@ Project Link: [https://github.com/jsperandio/pokedex-selenium](https://github.co
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Pages](https://pages.github.com)
-
-
-
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square

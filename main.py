@@ -9,9 +9,11 @@ from base_driver import BaseDriver
 
 
 class Config:
+
     def __init__(self, output_dir: str = "output", webdriver_path: str = "resource/geckodriver.exe",
                  headless_driver: bool = False,
                  log_level: int = logging.DEBUG):
+
         self.CURR_DIR: str = os.path.abspath(os.getcwd())
         self.OUTPUT_DIR: str = os.path.join(self.CURR_DIR, output_dir)
         self.WEBDRIVER_PATH: str = os.path.join(self.CURR_DIR, webdriver_path)
@@ -39,17 +41,17 @@ def extract_pokedex_robot(c: Config):
 
         base_driver.timeout = 30
 
-        # skip table header
+        # Skip table header
         # ['#', 'Name', 'Type', 'Total', 'HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed']
         progress_bar = tqdm(table_extracted[1:], desc="Pokemons", colour='green', leave=False, unit_scale=True)
         for r in progress_bar:
             progress_bar.set_description(f"Extracting moves from {r[1]}")
 
-            # navigate to first item on Name column
+            # Navigate to first item on Name column
             base_driver.search_link_text_and_navigate(link_text=r[1], wait_element=True,
                                                       wait_element_locator=(By.CLASS_NAME, "data-table"))
 
-            # navigate for the first generation moves
+            # Navigate for the first generation moves
             link = base_driver.search_link_by_text_and_attribute("1", ("title", "Generation 1: Red, Blue, Yellow"))
             base_driver.click_and_wait(element=link, wait_element_locator=(By.CLASS_NAME, "data-table"))
 
@@ -78,7 +80,7 @@ def extract_pokedex(c: Config):
 
         base_driver.timeout = 30
 
-        # skip table header
+        # Skip table header
         # ['#', 'Name', 'Type', 'Total', 'HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed']
         progress_bar = tqdm(pokemon_table_extracted[145:], desc="Pokemons", colour='green', leave=False,
                             unit_scale=True)
@@ -94,7 +96,7 @@ def extract_pokedex(c: Config):
             pokemon_name = pokemon_name.replace(".", '-')
             pokemon_name = pokemon_name.replace(" ", '')
 
-            # navigate to moves list
+            # Navigate to moves list
             base_driver.load_page(
                 page_url=f"https://pokemondb.net/pokedex/{pokemon_name}/moves/1",
                 wait_element=True,

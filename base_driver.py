@@ -102,8 +102,6 @@ class BaseDriver:
         for row in data_iteration:
             columns: List[WebElement] = self.get_table_row_columns(row)
 
-            # table_data_extracted.append([str(c.text).replace('\n', '/').replace('\r', '') for c in columns])
-
             values_list: list = list()
             for c in columns:
                 if c.text == "":
@@ -117,8 +115,6 @@ class BaseDriver:
 
         writer.writerows(table_data_extracted)
         file.close()
-
-        # logging.info(f"Table extracted to: {csv_name}")
 
         return table_data_extracted
 
@@ -145,7 +141,6 @@ class BaseDriver:
             element_clickable = ec.element_to_be_clickable((By.LINK_TEXT, link_text))
             WebDriverWait(self.driver, self.timeout).until(element_clickable)
             link_element = self.driver.find_element_by_link_text(link_text)
-            # logging.debug(f"Clicked at {link_text}")
             link_element.click()
         except Exception as e:
             logging.error(e.__str__())
@@ -167,31 +162,3 @@ class BaseDriver:
 
     def wait_for(self, lambda_callable):
         WebDriverWait(self.driver, timeout=self.timeout).until(lambda_callable)
-
-    def navigate_and_extract(self, row: WebElement):
-        # Get the name column
-        name = row.find_element_by_css_selector("td:nth-child(2) > a:nth-child(1)")
-
-        # Wait until element has enable to click
-        element_invisibility = ec.invisibility_of_element_located((By.ID, "gdpr-confirm"))
-        WebDriverWait(self.driver, 3).until(element_invisibility)
-        name.click()
-
-        # Wait until page load
-        element_present = ec.presence_of_element_located((By.CSS_SELECTOR, "ul.list-nav:nth-child(18)"))
-        WebDriverWait(self.driver, 3).until(element_present)
-
-        # Select Gen 1
-        self.driver.find_element_by_css_selector("ul.list-nav:nth-child(18) > li:nth-child(2) > a:nth-child(1)").click()
-
-        # Wait until table load
-        element_present = ec.presence_of_element_located((
-            By.CSS_SELECTOR,
-            "#tabs-moves-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > table:nth-child(1)"))
-        WebDriverWait(self.driver, 3).until(element_present)
-        table = self.get_table("#tabs-moves-1 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > "
-                               "table:nth-child(1)")
-        data = self.get_table_data(table)
-
-        self.iterate_table_data(data, self.print_table_row_data)
-        self.browser_history_back(2)
