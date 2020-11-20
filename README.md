@@ -70,6 +70,10 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 pip install selenium
 ```
 
+* [Firefox](https://www.mozilla.org/en-US/firefox/new/) if you use Geckodriver (you can use another browser)
+
+* [Chrome](https://www.google.com/chrome/) if you use Chromedriver (you can use another browser)
+
 ### Installation
 
 1. Clone the repo.
