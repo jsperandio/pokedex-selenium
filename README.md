@@ -125,6 +125,6 @@ Project Link: [https://github.com/jsperandio/pokedex-selenium](https://github.co
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/jsperandio/pokedex-selenium/blob/master/LICENSE.txt
+[license-url]: https://github.com/jsperandio/pokedex-selenium/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jsperandiob/
