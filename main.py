@@ -82,7 +82,7 @@ def extract_pokedex(c: Config):
 
         # Skip table header
         # ['#', 'Name', 'Type', 'Total', 'HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed']
-        progress_bar = tqdm(pokemon_table_extracted[145:], desc="Pokemons", colour='green', leave=False,
+        progress_bar = tqdm(pokemon_table_extracted[1:], desc="Pokemons", colour='green', leave=False,
                             unit_scale=True)
         for r in progress_bar:
             pokemon_name: str = r[1]
