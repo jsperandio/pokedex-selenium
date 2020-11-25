@@ -43,7 +43,7 @@ class BaseDriver:
 
     def load_page(self, page_url: str, wait_element: bool = False, wait_element_id: str = "", timeout: int = 0):
         self.driver.get(page_url)
-        timeout = (timeout == 0) if self.timeout else timeout
+        timeout = self.timeout if timeout == 0 else timeout
 
         logging.debug("Page loading...")
 
